@@ -20,3 +20,18 @@ function ReverseString(str) {
 }
   
 console.log(ReverseString("Geeks for Geeks"))
+
+//method2
+// Function to reverse string
+function ReverseString(str) {
+    return str.split('').reverse().join('')
+    }
+      
+    // Function call
+console.log(ReverseString("Geeks for Geeks"))
+
+
+//method3
+const ReverseString = str => [...str].reverse().join('');
+    
+console.log(ReverseString("Geeks for Geeks"))
