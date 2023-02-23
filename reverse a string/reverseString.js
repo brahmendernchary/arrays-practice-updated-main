@@ -32,6 +32,17 @@ console.log(ReverseString("Geeks for Geeks"))
 
 
 //method3
-const ReverseString = str => [...str].reverse().join('');
+const ReverseString2 = str => [...str].reverse().join('');
     
-console.log(ReverseString("Geeks for Geeks"))
+console.log(ReverseString2("Geeks for Geeks"))
+
+
+// method4
+
+method4 = [1,3,5,7,8]
+
+newMethod = method4.slice(0).reverse().map(function(val,index){
+    return val
+})
+
+console.log(newMethod)
