@@ -46,3 +46,39 @@ newMethod = method4.slice(0).reverse().map(function(val,index){
 })
 
 console.log(newMethod)
+
+// Code 6:String reverse without using inbult function
+function Reverse(){
+   var string ="India is my country";
+   var result="";
+   for( var i=string.length-1; i>=0 ; i-- ) {
+      result=result+string[i] }
+   return result
+}
+console.log(Reverse())
+// output = "yrtnuoc ym si aidnI"
+
+// Code 4:String reverse without reversing of individual words (Array of elements can be reverse with reverse() method but for string it is won't possible so required to split 
+// and then join().
+function removeDuplicates(){
+   var string ="India is my country"
+   let result = string.split('').reverse().join('').split(' ').reverse().join(' ')
+   return result
+}
+console.log(removeDuplicates()) 
+// output = "aidnI si ym yrtnuoc"
+// ------------------------------------------
+var reverseWords = function(s) {
+    let res = '';
+    let word = '';
+    for (let c of s) {
+        if (c === ' ') {
+            res += word + c;
+            word = '';
+        } else {
+            word = c + word;
+        }
+    }
+    return res + word;
+};
+console.log(reverseWords("priya bagde"))
