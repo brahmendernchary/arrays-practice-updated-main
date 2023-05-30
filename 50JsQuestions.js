@@ -145,7 +145,7 @@ console.log(b);
 
 // Question 15:
 function sum(){
-//   return arguments.reduce((a, b) => a + b);
+   return arguments.reduce((a, b) => a + b);
 }
 
 console.log(sum(1,2,3)); (1)
@@ -160,17 +160,17 @@ console.log(sum(1,2,3)); (2)
 // Arguments are not fully functional array, they have only one method length. Other methods cannot be used on them.
 // ... rest operator creates an array of all functions parameters. We then use this to return the sum of them.
 // Question 16:
-console.log(1 == '1');
-console.log(false == '0');
-console.log(true == '1');
-console.log('1' == '01');
-console.log(10 == 5 + 5);
+console.log(1 == '1');//true
+console.log(false == '0');//true
+console.log(true == '1');//true
+console.log('1' == '01');//false
+console.log(10 == 5 + 5);//true
 // Answer true true true false true. Explanation —'1' == '01' as we are comparing two strings here they are different but all other equal.
 
 // Question 17:
 
-console.log('1' - - '1'); (1)
-console.log('1' + - '1'); (2)
+console.log('1' - - '1'); (1) // 2
+console.log('1' + - '1'); (2) // 1-1
 // **Answer — **1. 2 2. “1–1” Explanation —
 
 // With type coercion string is converted to number and are treated as 1 - -1 = 2. 2.+ operator is used for concatenation of strings in javascript, so it is evaluated as '1' + '-1' = 1-1.
@@ -195,7 +195,7 @@ console.log(lang2); (2)
 // Question 19:
 
 (function(){
-   console.log(typeof this);
+   console.log(typeof this); //object
 }).call(10);
 // Answer object** Explanation** — call invokes the function with new this which in this case is 10 which is basically a constructor of Number and Number is object in javascript.
 
@@ -224,9 +224,9 @@ console.log(d.greeting);
 // First, a variable c holds a value to an object. Later, we assign d with the same reference that c has to the object. When you change one object, you change all of them.
 
 // Question 23:
-let a = 3;
-let b = new Number(3);
-let c = 3;
+let a = 3; //true
+let b = new Number(3); //false bcz new Number is object
+let c = 3; // true
 
 console.log(a == b);
 console.log(a === b);
@@ -365,16 +365,16 @@ console.log(arrTest);
 // Answer 40** Explanation** The last element from the second array is used as the index to get the value from first array like arrTest[3].
 
 // Question 35:
-console.log([] + []);               (1)
-console.log([1] + []);              (2)
-console.log([1] + "abc");           (3)
-console.log([1, 2, 3] + [1, 3, 4]); (4)
+console.log([] + []);               // ""
+console.log([1] + []);              // "1"
+console.log([1] + "abc");           // "1abc"
+console.log([1, 2, 3] + [1, 3, 4]); // "1,2,31,3,4"
 // **Answer — **1. "" 2. "1" 3. "1abc" 2. "1,2,31,3,4" **Explanation — **1. An empty array is while printing in console.log is treated as Array.toString(), so it prints an empty string. 2. An empty array when printed in console.log is treated as Array.toString() and so it is basically “1” + “” = "". 3. “1” + “abc” = "1abc". 4.“1, 2, 3” + “1, 3, 4” = "1,2,31,3,4".
 
 // Question 36:
 const ans1 = NaN === NaN;
 const ans2 = Object.is(NaN, NaN);
-console.log(ans1, ans2);
+console.log(ans1, ans2); // false, true
 // Answer false true Explanation NaN is a unique value so it fails in equality check, but it is the same object so Object.is returns true.
 
 // Question 37:
