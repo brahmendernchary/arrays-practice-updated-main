@@ -34,9 +34,9 @@ function MCQ1() {
     function printName() {
       if (name === "Jayesh") {
         let name = "JC";
-        console.log(name);
+        console.log(name);//JC
       }
-      console.log(name);
+      console.log(name); // Jayesh
     }
     printName();
   
