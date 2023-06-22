@@ -1,0 +1,86 @@
+<!-- HTML is a Markup language that is used to design web pages and JavaScript is a programming language that enables dynamic interactivity on websites when it is applied to an HTML. It helps users to build modern web applications. But the problem with this JavaScript was designed to run in a single-threaded environment, so multiple scripts cannot run at the same time and also when executing Javascript scripts on an HTML page, the page becomes unresponsive until the script is finished. So, To overcome this Web worker comes into the picture. The Web Workers is a separate piece of JavaScript code that runs in the background of the web page without affecting it.
+
+What is Web Worker?
+
+Web workers are multithreaded object which is used to execute Javascript in the background without affecting the performance of the application or webpage. Web Workers allow for long-running scripts that are not interrupted by scripts that respond to clicks or other user interactions and allow long tasks to be executed without affecting the responsiveness of the web page. Generally, it is used for big CPU-intensive tasks. -->
+
+<!-- Shared Web Workers: It can be shared by multiple scripts.
+
+Dedicated Web Workers: A dedicated worker is only accessible by the script which has been called it. -->
+
+<!-- The Syntax for Creating a Web Worker: -->
+
+<!-- It is used to create a web worker -->
+worker = new Worker("webWorker.js");
+
+<!-- The Syntax for Terminating a Web Worker:
+
+It is used to terminate a web worker. -->
+worker.terminate();
+
+<!-- Step-by-Step Implementation: Create a Javascript file for Web Worker and the code which you want to run in the background. Here we are creating a webWorker.js file and using it to count from 1 in the background and show that to our web page and in the frontend, we will use the alert box. -->
+
+// Initialized a variable with 0
+var count = 0;
+ 
+function timedCount() {
+    count = count + 1;
+ 
+    // It is used to send value
+    // back to html page
+    postMessage(count);
+ 
+    // It is a timeout function
+    setTimeout("timedCount()", 1000);
+}
+ 
+timedCount();
+
+<!-- Now create an index.html and add the following codes to that file.  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Web Worker</title>
+</head>
+ 
+<body>
+    <p>Web Worker is Counting Numbers</p>
+ 
+    <p>Counting: <output id="countM"></output></p>
+ 
+    <button onclick="alertMessage()">
+        Alert On
+    </button>
+ 
+    <script>
+ 
+        // This is function to run alert
+        function alertMessage() {
+            alert("Web Worker is Running in Background");
+        }
+ 
+        // Created a web worker and passed script which
+        // needs to execute in background
+        var worker = new Worker("webWorkers.js");
+ 
+        // Called onmessage method to get value from
+        // script file and show it on web page
+        worker.onmessage = function (event) {
+            document.getElementById("countM")
+                .innerHTML = event.data;
+        };
+    </script>
+</body>
+</html>
+
+<!-- Output: In this program, Web Worker is counting numbers in the background and still, we can use our web page like here we have used the alert box.  -->
+
+<!-- Supported Browsers:
+
+Google Chrome 4.0
+Firefox 3.5
+Microsoft Edge 10.0
+Safari 4.0
+Opera 11.5
+Note: Chrome doesn’t let you load Web Workers when running scripts from a local file. So, for this use, a web host or you can use live server extensio -->
