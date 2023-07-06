@@ -15,7 +15,7 @@ function getSum(str) {
 let n = 687;
 console.log(getSum(n));
 
-//method 2
+//method 24
 function getSum(num) {
   let sum;
 
@@ -28,3 +28,12 @@ function getSum(num) {
 let num = 687;
 
 document.write(getSum(num));
+
+// method 3
+
+const sumDigits = (num) =>
+  num
+    .toString()
+    .split("")
+    .map(Number)
+    .reduce((a, b) => a + b);
