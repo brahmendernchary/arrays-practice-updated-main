@@ -91,3 +91,12 @@ console.log(x10()()); //4
 
 const myArray = [1, undefined, NaN, 2, null, "@apple", true, 5, false];
 console.log(myArray.filter(Boolean)); //(5) [1, 2, '@apple', true, 5]
+
+let x11 = [1, 2, 3];
+let y11 = x11.indexOf(2) * 2;
+console.log(y11); //2
+
+//Find third largest number
+["20", "120", "111", "215", "54", "78"].sort(function (a, b) {
+  return b - a;
+})[2];

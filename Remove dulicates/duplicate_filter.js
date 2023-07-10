@@ -64,3 +64,41 @@ let num = [1, 2, 3, 3, 4, 4, 5, 5, 6];
 let filtered = num.filter((a, b) => num.indexOf(a) === b);
 console.log(filtered);
 // Result: [ 1, 2, 3, 4, 5, 6 ]
+
+//find No of duplicates
+let arr = [1, 2, 3, 4, 5, 5];
+const seen = new Set();
+const duplicates = arr.filter((n) => seen.size === seen.add(n).size);
+console.log(duplicates); // [ 5 ]
+console.log(duplicates.length); // 1
+
+//find No of duplicates
+const counts = {};
+const sampleArray = [
+  "1",
+  "5",
+  "9",
+  "14",
+  "5",
+  "22",
+  "48",
+  "25",
+  "22",
+  "20",
+  "9",
+  "13",
+];
+sampleArray.forEach(function (x) {
+  counts[x] = (counts[x] || 0) + 1;
+});
+console.log(counts); // output: {
+//   '1': 1,
+//   '5': 2,
+//   '9': 2,
+//   '13': 1,
+//   '14': 1,
+//   '20': 1,
+//   '22': 2,
+//   '25': 1,
+//   '48': 1
+// }
