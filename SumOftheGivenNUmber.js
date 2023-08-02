@@ -37,3 +37,4 @@ const sumDigits = (num) =>
     .split("")
     .map(Number)
     .reduce((a, b) => a + b);
+//Mariyanna Nadiger
